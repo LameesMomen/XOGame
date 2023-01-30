@@ -35,14 +35,17 @@ h2{
 
   
 .winner {
-    background-color: #00000096;
-    position: absolute;
-    top: 25%;
-    margin: 0 auto;
-    width: max-content;
-    height: 270px;
-    left: 7%;
-    border-radius: 20px;
+  background-color: #00000096;
+  position: absolute;
+  top: 0;
+  margin: auto;
+  width: max-content;
+  height: 270px;
+  border-radius: 20px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
 }
 
 .tryagainbtn{

@@ -67,7 +67,7 @@ function winner(){
     end(2,5,8);
   }
   else if(squares[3] == squares[6] && squares[6] == squares[9] && squares[3] !=''){
-    end(4,5,6);
+    end(3,6,9);
   }
   else if(squares[1] == squares[5] && squares[5] == squares[9] && squares[1] !=''){
     end(1,5,9);

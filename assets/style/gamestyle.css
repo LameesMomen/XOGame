@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap');
+
+body{
+    background-color: rgb(24, 24, 24) !important;
+}
+.EtisalatLogo{
+    margin: 0 25%;
+
+    width: 200px;
+    height: 90px;
+}
+
+h2{
+    color:rgb(255,255,255,0.8);
+    font-size:5rem !important;
+    font-family: 'Rajdhani', sans-serif;
+    text-shadow: 0px 0px 20px #E00800, 0px 0px 40px #E00800, 0px 0px 60px #E00800,0px 0px 80px #E00800, 0px 0px 100px #E00800;
+  }
+
+  .gameContainer{
+    margin: 25% 0;
+  }
+
+  button{
+    width: 100px;
+    height: 100px;
+    background-color: rgba(48, 49, 49, 0.822);
+    font-size: 50px !important;
+    font-weight: 600 !important;
+  }
+
+  .done{
+    background-color: #000;
+  }
+
+  
+.winner {
+    background-color: #00000096;
+    position: absolute;
+    top: 25%;
+    margin: 0 auto;
+    width: max-content;
+    height: 270px;
+    left: 7%;
+    border-radius: 20px;
+}
+
+.tryagainbtn{
+    width: 150px !important;
+    height: 50px !important;
+    background-color: #E00800 !important;
+    color: white !important;
+    font-size: medium !important;
+    font-weight: 400 !important;
+}
+
+.winnerText{
+    color: #C6A25B;
+    text-shadow: 0px 2px 3px #e00800;
+    font-weight: 500 !important;
+    font-size: 50px !important;
+    text-align: center;
+    margin: 15px 0 0;
+}

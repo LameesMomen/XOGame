@@ -3,9 +3,13 @@
 body{
     background-color: rgb(24, 24, 24) !important;
 }
-.EtisalatLogo{
-    margin: 0 25%;
 
+.EtisalatLogo{
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
     width: 200px;
     height: 90px;
 }
@@ -18,11 +22,12 @@ h2{
   }
 
   .gameContainer{
-    margin: 20% 0;
+    margin: 15% 0;
+    width: 100%;
   }
 
   button{
-    width: 100px;
+    width: 90%;
     height: 100px;
     background-color: rgba(48, 49, 49, 0.822);
     font-size: 50px !important;

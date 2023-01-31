@@ -1,5 +1,6 @@
 var turn = 'X' ;
 var finish =false;
+numberOfSteps = 0;
 document.getElementById('title').innerHTML='X Player'
 
 var squares =[];
@@ -7,31 +8,125 @@ var winnerName ='';
 
 
 function play(id){
+  if(numberOfSteps <9){
   let element = document.getElementById(id);
   if(turn === 'X' && element.innerHTML == ''){
+  numberOfSteps ++;
     element.innerHTML= 'X'
     element.style.color='#E00800'
     turn='O'
     document.getElementById('title').innerHTML='O Player'
   }
-  else  if(turn === 'O' && element.innerHTML == ''){
-    element.innerHTML= 'O'
-    element.style.color='#C6A25B'
-    turn='X'
-    document.getElementById('title').innerHTML='X Player'
-  }
+}
+else{
+  setTimeout(() => {
+    document.getElementById('congratTitle').innerHTML = `negative draw`;
+    document.querySelector('.winnerText').innerHTML = ``;
+    document.getElementById('winnerPopup').style.display='block'
+    finish = true;
+    document.querySelector('#item1').disabled = true;
+    document.querySelector('#item2').disabled = true;
+    document.querySelector('#item3').disabled = true;
+    document.querySelector('#item4').disabled = true;
+    document.querySelector('#item5').disabled = true;
+    document.querySelector('#item6').disabled = true;
+    document.querySelector('#item7').disabled = true;
+    document.querySelector('#item8').disabled = true;
+    document.querySelector('#item9').disabled = true;
+  }, 200);
+}
 
   winner();
+  // computer(id.split('item')[1]);
   computer();
+  check()
 
 }
+
+// function computer(number){
+//   if(!finish){
+//     if(number == 1){
+
+//       let secondElement = document.getElementById('item' + ++number);
+//     console.log(secondElement)
+
+//        if(turn === 'O' && secondElement.innerHTML == ''){
+//           setTimeout(() => {
+//             secondElement.innerHTML= 'O'
+//             secondElement.style.color='#C6A25B'
+//             turn='X'
+//             document.getElementById('title').innerHTML='X Player'
+//             winner();
+//           }, 500);
+//         }
+//         else{
+//           setTimeout(() => {
+//             let x = Math.floor((Math.random() * 9) + 1);
+//             let element = document.getElementById('item' + x);
+//             if(turn === 'O' && element.innerHTML == ''){
+//               element.innerHTML= 'O'
+//               element.style.color='#C6A25B'
+//               turn='X'
+//               document.getElementById('title').innerHTML='X Player'
+//               winner();
+//             }else{
+//               computer(number);
+//             }
+            
+//             }, 500);
+//         }
+//     }
+//     else{
+//       let PreviousElement = document.getElementById('item' + --number);
+//       let secondElement = document.getElementById('item' + ++number);
+//       if(turn === 'O' && PreviousElement.innerHTML == ''){
+//         setTimeout(() => {
+//           PreviousElement.innerHTML= 'O'
+//           PreviousElement.style.color='#C6A25B'
+//           turn='X'
+//           document.getElementById('title').innerHTML='X Player'
+//           winner();
+//         }, 500);
+//         }
+//         else if(turn === 'O' && secondElement.innerHTML == ''){
+//           setTimeout(() => {
+//             secondElement.innerHTML= 'O'
+//             secondElement.style.color='#C6A25B'
+//             turn='X'
+//             document.getElementById('title').innerHTML='X Player'
+//             winner();
+//           }, 500);
+//         }
+//         else{
+//           setTimeout(() => {
+//             let x = Math.floor((Math.random() * 9) + 1);
+//             let element = document.getElementById('item' + x);
+//             if(turn === 'O' && element.innerHTML == ''){
+//               element.innerHTML= 'O'
+//               element.style.color='#C6A25B'
+//               turn='X'
+//               document.getElementById('title').innerHTML='X Player'
+//               winner();
+//             }else{
+//               computer(number);
+//             }
+            
+//             }, 500);
+//         }
+
+//     }
+
+
+// }
+// }
 
 function computer(){
   if(!finish){
 setTimeout(() => {
-let x = Math.floor((Math.random() * 9) + 1);
-let element = document.getElementById('item' + x);
-if(turn === 'O' && element.innerHTML == ''){
+  let x = Math.floor((Math.random() * 9) + 1);
+  let element = document.getElementById('item' + x);
+  if(turn === 'O' && element.innerHTML == ''){
+  numberOfSteps ++;
   element.innerHTML= 'O'
   element.style.color='#C6A25B'
   turn='X'
@@ -42,6 +137,8 @@ if(turn === 'O' && element.innerHTML == ''){
 }
 
 }, 500);
+
+check()
 
 }
 }
@@ -97,4 +194,22 @@ function end(num1 ,num2 ,num3 ){
 
 function TryAgain(){
   location.reload()
+}
+
+function check(){
+  if(numberOfSteps == 9 && finish == false){
+    document.getElementById('congratTitle').innerHTML = `negative draw`;
+    document.querySelector('.winnerText').innerHTML = ``;
+    document.getElementById('winnerPopup').style.display='block'
+  finish = true;
+    document.querySelector('#item1').disabled = true;
+    document.querySelector('#item2').disabled = true;
+    document.querySelector('#item3').disabled = true;
+    document.querySelector('#item4').disabled = true;
+    document.querySelector('#item5').disabled = true;
+    document.querySelector('#item6').disabled = true;
+    document.querySelector('#item7').disabled = true;
+    document.querySelector('#item8').disabled = true;
+    document.querySelector('#item9').disabled = true;
+  }
 }
